@@ -1,18 +1,35 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Aggregator</title>
-    <link rel="stylesheet" href="src/css/style.css" />
+
+    <!-- Google Fonts is missing, but using Segoe UI fallback is okay. -->
+
+    <!-- Font Awesome is REQUIRED for your social icons (fab fa-instagram, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="/src/css/style.css" />
+
+    <!-- Favicon Link -->
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
+    <!-- HEADER was removed, let's re-add it for structure -->
+    <header class="site-header">
+        <h1>📚 The Aggregator</h1>
+        <div class="header-right"></div>
+    </header>
+
     <main class="main-content">
         <div class="search-card">
+            <!-- card-header was removed, keeping card-body for simplicity -->
             <div class="card-body">
                 <form id="search-form">
+                    <!-- Added ID to input for easier JS access -->
                     <input type="text" id="search-input" placeholder="Search for title, author, publisher"
                         aria-label="Search for title, author, or publisher" />
                     <button type="submit" class="btn-search">SEARCH</button>
@@ -34,13 +51,17 @@
                     <p>"To build up a library is to create a life. It's never just a random collection of books."</p>
                     <p>— Carlos María Domínguez</p>
                 </div>
-            </div>
-        </div>
+            </div> <!-- End of card-body -->
+        </div> <!-- End of search-card -->
 
-        <div id="search-results" class="results-container"></div>
+        <!-- The required container for search results -->
+        <div id="search-results" class="results-container">
+            <!-- Books will be injected here -->
+        </div>
     </main>
 
-   
+    <!-- CRITICAL FIX: The link to your main JavaScript file -->
+    <script type="module" src="/src/js/main.js"></script>
 </body>
 
 </html>

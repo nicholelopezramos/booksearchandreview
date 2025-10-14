@@ -1,0 +1,16 @@
+{
+  "name": "booksearchandreview",
+  "version": "1.0.0",
+  "description": "A book search and review app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Nichole",
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^5.0.0"
+  }
+}
