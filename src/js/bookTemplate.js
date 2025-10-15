@@ -27,3 +27,6 @@ export const bookTemplate = (book) => {
         </div>
     `;
 };
+
+const booksHtml = validBooks.map(book => bookTemplate(book)).join('');
+container.innerHTML = `<div class="book-list-grid">${booksHtml}</div>`;
