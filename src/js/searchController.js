@@ -3,6 +3,26 @@ import { renderBookList } from './bookList.js';
 import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js';
 window.Fuse = Fuse;
 
+import { fetchReviews } from './reviewConnector.js';
+
+async function displayReviews(title) {
+    const reviews = await fetchReviews(title);
+    const container = document.getElementById('search-results');
+
+    if (reviews.length > 0) {
+        const reviewSection = document.createElement('div');
+        reviewSection.classList.add('review-section');
+
+        reviewSection.innerHTML = `<h3>Reviews for "${title}"</h3>`;
+        reviews.forEach(review => {
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${review.byline}</strong>: ${review.summary}`;
+            reviewSection.appendChild(p);
+        });
+
+        container.appendChild(reviewSection);
+    }
+}
 
 
 export function initSearchController() {
