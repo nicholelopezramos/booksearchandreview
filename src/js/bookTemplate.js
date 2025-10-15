@@ -1,7 +1,11 @@
-// src/js/bookTemplate.js
+
 
 // Generates the HTML string for a book item in the search results list
 export const bookTemplate = (book) => {
+    if (!book) {
+        console.warn("bookTemplate received undefined book.");
+        return '';
+    }
     // Open Library data uses 'title' and 'author_name' (an array)
     const title = book.title || 'Untitled Book';
     const author = book.author_name ? book.author_name[0] : 'Unknown Author';

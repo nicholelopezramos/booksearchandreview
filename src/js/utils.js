@@ -1,4 +1,4 @@
-// src/js/utils.js
+
 
 /** Utility function to safely get JSON data from Local Storage. */
 export const getLocalStorage = (key, defaultValue = []) => {

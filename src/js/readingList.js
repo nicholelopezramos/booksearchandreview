@@ -1,4 +1,4 @@
-// src/js/readingList.js
+
 import { getLocalStorage, setLocalStorage } from './utils.js';
 
 const READING_LIST_KEY = 'bookAggregatorReadingList';

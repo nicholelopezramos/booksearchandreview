@@ -11,6 +11,7 @@
   "author": "Nichole",
   "license": "MIT",
   "dependencies": {
+    "fuse.js": "^7.1.0",
     "vite": "^5.0.0"
   }
 }

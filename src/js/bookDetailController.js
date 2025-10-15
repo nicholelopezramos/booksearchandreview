@@ -1,4 +1,3 @@
-// src/js/bookDetailController.js
 
 import { fetchNYTReviews, fetchBooks } from './apiConnector.js';
 import { calculateAggregateScore } from './reviewAggregator.js';
@@ -13,7 +12,7 @@ export async function loadBookDetails(bookKey, bookTitle) { // Need to pass the 
         // 2. Fetch professional reviews (NYT) using the book's title
         const nytReviews = await fetchNYTReviews(bookTitle);
         console.log(`Found ${nytReviews.length} NYT reviews.`);
-
+        
         // 3. Calculate and display the score
         const score = calculateAggregateScore(nytReviews);
         console.log(`Aggregate Score: ${score}`);

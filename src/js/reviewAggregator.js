@@ -1,4 +1,4 @@
-// src/js/reviewAggregator.js
+
 
 /**
  * Calculates a weighted score from various review sources (e.g., NYT, Goodreads).

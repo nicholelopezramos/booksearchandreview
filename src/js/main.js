@@ -25,7 +25,9 @@ function initApp() {
     // As you expand, you'll add more cases here:
 
     // Default route: / (Search Page)
-    if (path === '/' || path === '/index.html') {
+    if (path.includes('index') || path === '/' || path === '/booksearchandreview/') {
+        console.log("SearchController initialized.");
+
         initSearchController();
         // Future controllers for /details/id or /reading-list would go here.
     } else {
