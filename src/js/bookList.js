@@ -1,16 +1,12 @@
-import { createBookTemplate } from './bookTemplate.js';
-
-export function renderBookList(books) {
-    const container = document.querySelector('#results');
-    container.innerHTML = '';
+export const renderBookList = (books) => {
+    const resultsContainer = document.getElementById('search-results');
+    resultsContainer.innerHTML = '';
 
     if (books.length === 0) {
-        container.innerHTML = '<p>No books found.</p>';
+        resultsContainer.innerHTML = '<p class="no-results">No books found.</p>';
         return;
     }
 
-    books.forEach(book => {
-        const html = createBookTemplate(book);
-        container.insertAdjacentHTML('beforeend', html);
-    });
-}
+    const booksHtml = books.map(book => bookTemplate(book)).join('');
+    resultsContainer.innerHTML = `<div class="book-list-grid">${booksHtml}</div>`;
+};

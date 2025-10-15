@@ -16,8 +16,8 @@ import { renderBookList } from './bookList.js';
 export function initSearchController() {
     // CRITICAL FIX: Use the IDs from your index.html (search-form and search-input)
     const form = document.querySelector('#search-form');
-    const input = document.querySelector('#search-input');
-
+    // ✅ Select the first input inside the form instead of a non-existent ID
+    const input = form ? form.querySelector('input[type="text"]') : null; 
     // Simple check to ensure required elements exist before attaching listeners
     if (!form || !input) {
         console.error("SearchController failed to initialize: Missing #search-form or #search-input element in HTML.");
@@ -62,3 +62,4 @@ export function initSearchController() {
 
     console.log("SearchController initialized and form listener attached.");
 }
+
