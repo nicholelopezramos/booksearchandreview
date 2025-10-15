@@ -1,6 +1,6 @@
 import { fetchBooks } from './apiConnector.js';
 import { renderBookList } from './bookList.js';
-import Fuse from 'fuse.js';
+import Fuse from 'fuse.js'; 
 
 
 export function initSearchController() {
