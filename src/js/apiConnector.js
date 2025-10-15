@@ -1,4 +1,3 @@
-// src/js/apiConnector.js
 
 // --- 1. Open Library (OL) Constants ---
 const OL_BASE_URL = 'https://openlibrary.org';

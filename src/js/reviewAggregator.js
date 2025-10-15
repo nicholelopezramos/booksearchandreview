@@ -14,4 +14,3 @@ export const calculateAggregateScore = (nytReviews, goodreadsData = {}) => {
     return 3.5;
 };
 
-// Add functions for formatting and rendering the review section HTML

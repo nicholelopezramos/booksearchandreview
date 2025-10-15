@@ -49,4 +49,36 @@ function initApp() {
 }
 
 window.addEventListener('DOMContentLoaded', initApp);
+
+// 🌸 Animate falling items
+document.querySelectorAll('.falling-item').forEach(item => {
+    const delay = Math.random() * 5;
+    const left = Math.random() * window.innerWidth;
+    const duration = 5 + Math.random() * 5;
+
+    item.style.left = `${left}px`;
+    item.style.animationDuration = `${duration}s`;
+    item.style.animationDelay = `${delay}s`;
+});
+
 console.log('Main application script loaded.');
+
+
+
+async function fetchGoodreadsReviews() {
+  const response = await fetch('https://api.apify.com/v2/datasets/uh7CEn75tuFtF5aRq/items?format=json&view=overview&clean=true');
+  const reviews = await response.json();
+
+  const container = document.getElementById('goodreads-section');
+  reviews.forEach(review => {
+    const div = document.createElement('div');
+    div.classList.add('review-card');
+    div.innerHTML = `
+      <p><strong>User:</strong> ${review.user_name}</p>
+      <p><strong>Rating:</strong> ⭐ ${review.rating || 'N/A'}</p>
+      <p>${review.review_text || 'No review text available.'}</p>
+      <p><em>Genre:</em> ${review.genre || 'Unknown'}</p>
+    `;
+    container.appendChild(div);
+  });
+}
