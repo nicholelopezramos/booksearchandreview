@@ -26,7 +26,6 @@ export function initSearchController() {
         try {
             const books = await fetchBooks(query); // ✅ fetchBooks returns the array directly
             console.log(`Search complete. Found ${books.length} books.`);
-            renderBookList(books);
 
             // 🔍 Fuzzy match the query against book titles and authors
             const fuse = new Fuse(books, {
