@@ -1,11 +1,14 @@
 import { fetchBooks } from './apiConnector.js';
 import { renderBookList } from './bookList.js';
-import Fuse from 'fuse.js'; 
+import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js';
+window.Fuse = Fuse;
+
 
 
 export function initSearchController() {
     const form = document.querySelector('#search-form');
     const input = form ? form.querySelector('input[type="text"]') : null;
+
 
     if (!form || !input) {
         console.error("SearchController failed to initialize: Missing #search-form or #search-input element in HTML.");
